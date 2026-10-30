@@ -1,0 +1,19 @@
+{
+  "name": "studentmeet",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Real-time study rooms: video, chat, screen sharing and scheduling over WebSockets + WebRTC",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "test": "npm test -w server && npm test -w client",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
